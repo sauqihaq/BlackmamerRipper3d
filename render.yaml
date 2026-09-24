@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: demonz-ripper-api
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: ./
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: RENDER_LOCAL_STORAGE
+        value: "true"
+      - key: CORS_ORIGIN
+        sync: false

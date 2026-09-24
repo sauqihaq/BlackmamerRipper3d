@@ -1,0 +1,13 @@
+[build]
+  base = "/"
+  command = "npm run build --workspace=apps/ripper-ui"
+  publish = "apps/ripper-ui/dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# SPA fallback for React Router / client-side routes.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
